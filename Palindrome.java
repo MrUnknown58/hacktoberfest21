@@ -7,6 +7,7 @@ public class Palindrome {
         
         Scanner sc=new Scanner(System.in);
         String A=sc.next();
+        A=A.toLowerCase();
         String s="";
         for(int i=0;i<A.length();i++)
         {
