@@ -1,3 +1,4 @@
+// Program to create a list of things. (Like we make a list of grocery items).
 import java.io.*;
 import java.util.*;
 import java.text.*;
