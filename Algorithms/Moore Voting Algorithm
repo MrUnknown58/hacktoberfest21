@@ -1,0 +1,37 @@
+//The Boyer-Moore voting algorithm is one of the popular optimal algorithms which is used to find the
+// MAJORITY element among the given elements that have more than N/ 2 occurrences.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int moores_voting(int arr[],int n){
+        int i,j,curr=-1,cnt=0;
+        for(i=0;i<n;i++)
+        {
+            if(cnt == 0){curr=arr[i];}
+            if(curr == arr[i]){cnt++;}
+            if(curr != arr[i]){cnt--;}
+
+        }
+        cnt=0;
+        for(i=0;i<n;i++){
+            if(arr[i] == curr){
+                cnt++;
+            }
+        }
+        if(cnt > n/2){
+            return curr;
+        }
+        return -1;
+}
+
+
+int main(){
+
+int arr[]={ 1, 1, 1, 1, 2, 3, 4 };
+int n=sizeof(arr)/sizeof(arr[0]);
+
+int majority_element=moores_voting(arr,n);
+cout<<majority_element;
+}
